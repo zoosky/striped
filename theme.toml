@@ -1,0 +1,26 @@
+name = "striped"
+description = "A free, fully responsive HTML5 site template. Design by HTML5 UP"
+license = "MIT"
+homepage = "https://github.com/zoosky/striped"
+# The minimum version of Gutenberg required
+min_version = "0.1.0"
+# An optional live demo URL
+demo = ""
+
+# Any variable there can be overriden in the end user `config.toml`
+# You don't need to prefix variables by the theme name but as this will
+# be merged with user data, some kind of prefix or nesting is preferable
+# Use snake_casing to be consistent with the rest of Gutenberg
+[extra]
+
+# The theme author info: you!
+[author]
+name = "Andreas Kapp"
+homepage = "https://www.kapp.technology"
+
+# If this is porting a theme from another static site engine, provide
+# the info of the original author here
+[original]
+author =  "mdo"
+homepage = "http://markdotto.com/"
+repo = "https://github.com/getpelican/pelican-themes/tree/master/pelican-striped-html5up"
