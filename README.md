@@ -1,7 +1,7 @@
-# striped
+# striped - WIP
 striped is a brazen two-column [Gutenberg](https://github.com/Keats/gutenberg) based on the Jekyll theme of the same name that pairs a prominent sidebar with uncomplicated content.
 
-![striped screenshot](https://f.cloud.github.com/assets/98681/1831228/42af6c6a-7384-11e3-98fb-e0b923ee0468.png)
+![striped screenshot](https://github.com/zoosky/striped/blob/master/screenshot.png)
 
 
 ## Contents
