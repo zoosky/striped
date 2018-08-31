@@ -5,7 +5,10 @@
         <title>{% block title %}{{ config.title }}{% endblock title %}</title>
         <meta charset="utf-8" />
         {% endblock head %}
-        <link rel="stylesheet" href="{{ get_url(path="main.css", trailing_slash=false) }}" />
+
+        {% set cssurl  = get_url( path="css/main.css", trailing_slash=false)   %}
+
+        <link rel="stylesheet" href="//{{ cssurl | safe }}" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <!--[if lte IE 8]><script src="/theme/js/ie/html5shiv.js"></script><![endif]-->
         <!--[if lte IE 8]><link rel="stylesheet" href="/theme/css/ie8.css" /><![endif]-->

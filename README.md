@@ -10,8 +10,6 @@ striped is a brazen two-column [Gutenberg](https://github.com/Keats/gutenberg) b
 - [Options](#options)
   - [Sidebar menu](#sidebar-menu)
   - [Sticky sidebar content](#sticky-sidebar-content)
-  - [Themes](#themes)
-  - [Reverse layout](#reverse-layout)
 
 ## Installation
 First download this theme to your `themes` directory:
