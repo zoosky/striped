@@ -1,70 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta http-equiv="content-type" content="text/html; charset=utf-8">
+{% extends "base.html" %}
+{% block content %}
+<div id="content">
+<div class="inner">
+<!-- {% block content_title %}
+<h2>All articles</h2>
+{% endblock %} -->
 
-      <!-- Enable responsiveness on mobile devices-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-
-      <title>{% block title %}{{ config.title }}{% endblock title %}</title>
-
-      <!-- CSS -->
-      <link rel="stylesheet" href="{{ get_url(path="print.css", trailing_slash=false) }}" media="print">
-      <link rel="stylesheet" href="{{ get_url(path="poole.css", trailing_slash=false) }}">
-      <link rel="stylesheet" href="{{ get_url(path="striped.css", trailing_slash=false) }}">
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700|Abril+Fatface">
-
-      {% if config.generate_rss %}
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="{{ get_url(path="rss.xml", trailing_slash=false) }}">
-      {% endif %}
-
-      {% block extra_head %}
-      {% endblock extra_head %}
-    </head>
-
-    <body class="{{ config.extra.striped_theme }} {% if config.extra.striped_reverse %}layout-reverse{% endif %}">
-        {% block sidebar %}
-            <div class="sidebar">
-                <div class="container {% if config.extra.striped_sticky %}sidebar-sticky{% endif %}">
-                    <div class="sidebar-about">
-                        {% block sidebar_about %}
-                            <a href="{{ config.base_url }}"><h1>{{ config.title }}</h1></a>
-                            {% if config.description %}
-                            <p class="lead">{{config.description}}</p>
-                            {% endif %}
-                        {% endblock sidebar_about %}
-                    </div>
-
-                    <ul class="sidebar-nav">
-                        {% block sidebar_nav %}
-                        {% for link in config.extra.striped_links %}
-                        <li><a href="{{link.url}}">{{link.name}}</a></li>
-                        {% endfor %}
-                        {% endblock sidebar_nav %}
-                    </ul>
-                </div>
-            </div>
-        {% endblock sidebar %}
-
-        <div class="content container">
-            {% block content %}
-                <div class="posts">
-                    {% for page in section.pages | reverse %}
-                      <div class="post">
-                        <h1 class="post-title">
-                          <a href="{{ page.permalink }}">
-                            {{ page.title }}
-                          </a>
-                        </h1>
-
-                        <span class="post-date">{{ page.date | date(format="%Y-%m-%d") }}</span>
-                      </div>
-                    {% endfor %}
-                </div>
-            {% endblock content %}
-        </div>
-
-    </body>
-
-</html>
+{% for page in section.pages | reverse %}
+        <article class="box post post-excerpt">
+                <header> 
+                <h2><a href="{{  config.base_url }}/{{ page.path }}" rel="bookmark" title="Permalink to {{ page.title|striptags }}">{{ page.title }}</a></h2> 
+                {% if page.extra.headline %}
+                    <p>{{page.extra.headline}}</p>
+                {% endif %}
+                </header>
+                <div class="info">
+                    <span class="date" datetime="{{ page.date | date(format="%Y-%m-%d")  }}"> 
+                    
+                    <!-- <ul class="stats">
+                                    <li><a href="#" class="icon fa-comment">16</a></li>
+                                    <li><a href="#" class="icon fa-heart">32</a></li>
+                                    <li><a href="#" class="icon fa-twitter">64</a></li>
+                                    <li><a href="#" class="icon fa-facebook">128</a></li>
+                                </ul> -->
+                </div><!-- /.post-info -->
+                <div class="entry-content"> &nbsp; </div><!-- /.entry-content -->
+        </article>
+{% endfor %}
+<!-- /#posts-list -->
+{# if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+{% endif #}
+</div>
+</div><!-- /#content -->
+{% endblock content %}

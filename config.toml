@@ -4,6 +4,7 @@ base_url = "https://example.com"
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = true
 
+name = "striped"
 title = "striped theme"
 description = "A clean blogging theme"
 
@@ -14,11 +15,7 @@ highlight_code = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 
+generate_rss = true
+
 [extra]
-# Put all your custom variables here
-striped_sticky = true
-striped_reverse = false
-striped_theme = ""
-striped_links = [
-    {url = "https://google.com", name = "About"},
-]
+default_lang = "en"
