@@ -1,5 +1,5 @@
 # striped - WIP
-striped is a brazen two-column [Gutenberg](https://github.com/Keats/gutenberg) based on the Jekyll theme of the same name that pairs a prominent sidebar with uncomplicated content.
+striped is a brazen two-column [Gutenberg](https://github.com/Keats/gutenberg) based on the HTML5UP theme striped.
 
 ![striped screenshot](https://github.com/zoosky/striped/blob/master/screenshot.png)
 
